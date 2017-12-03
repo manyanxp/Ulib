@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\util">
+      <UniqueIdentifier>{ad0e7cea-9905-4f45-99e8-bbf6ca63cf87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\util">
+      <UniqueIdentifier>{87fa569c-58c7-4004-b0a5-b37cf6e89625}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\lock">
+      <UniqueIdentifier>{0fed4f25-916f-4550-be34-2ffa7504ea4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\lock">
+      <UniqueIdentifier>{3a718808-7d36-4ed5-b97b-6028bd680fe1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="./inc/stdafx.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="./inc/targetver.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\lock\mutex.h">
+      <Filter>ヘッダー ファイル\lock</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\lock\syncer.h">
+      <Filter>ヘッダー ファイル\lock</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\util\crc.h">
+      <Filter>ヘッダー ファイル\util</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\util\stopwatch.h">
+      <Filter>ヘッダー ファイル\util</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\lock\critical_section.h">
+      <Filter>ヘッダー ファイル\lock</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\util\counter.h">
+      <Filter>ヘッダー ファイル\util</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="./src/stdafx.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lock\mutex.cpp">
+      <Filter>ソース ファイル\lock</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
