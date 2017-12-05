@@ -92,8 +92,8 @@ bool Mutex::lock() {
 		cnt++;
 	}
 
-	_lockfilename = "";
-	_locklineno = 0;
+	this->_lockfilename = "";
+	this->_locklineno = 0;
 
 	return true;
 }
@@ -108,11 +108,11 @@ bool Mutex::lock(uint32_t waitTime) {
 	// 待機する.
 	uint32_t result = WaitForSingleObject(_handle, waitTime);
 	if( (result == WAIT_OBJECT_0) || (result == WAIT_ABANDONED) ) {
-		_lockCount++;
+		this->_lockCount++;
 		if( result == WAIT_ABANDONED ) {
 			;
 		}
-		_usLockedThreadID = GetCurrentThreadId();	// ミューテックスを保有しているスレッドIDを保持
+		this->_usLockedThreadID = GetCurrentThreadId();	// ミューテックスを保有しているスレッドIDを保持
 	}
 
 	return ( (result == WAIT_OBJECT_0) || (result == WAIT_ABANDONED) );
@@ -124,8 +124,8 @@ bool Mutex::lock(uint32_t waitTime) {
 bool Mutex::unlock(const LPCTSTR pFile, uint32_t uiLine)
 {
 	std::string name(pFile);
-	_unlockfilename = name;
-	_unlocklineno = uiLine;
+	this->_unlockfilename = name;
+	this->_unlocklineno = uiLine;
 	return unlock();
 }
 
@@ -133,14 +133,14 @@ bool Mutex::unlock(const LPCTSTR pFile, uint32_t uiLine)
  * ロックを解放する.
  */
 bool Mutex::unlock() {
-	_lockCount--;
+	this->_lockCount--;
 	BOOL result = ReleaseMutex( _handle );
 	if( result == FALSE) {
 		;
 	}
 
-	_unlockfilename = "";
-	_unlocklineno = 0;
+	this->_unlockfilename = "";
+	this->_unlocklineno = 0;
 
 	return (result != FALSE);
 }
